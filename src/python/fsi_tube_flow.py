@@ -1026,7 +1026,7 @@ if (progressDiagnostics):
 fluidGeometricField = iron.Field()
 fluidGeometricField.CreateStart(fluidGeometricFieldUserNumber,fluidRegion)
 # Set the decomposition to use
-fluidGeometricField.MeshDecompositionSet(fluidDecomposition)
+fluidGeometricField.DecompositionSet(fluidDecomposition)
 # Set the scaling to use
 fluidGeometricField.ScalingTypeSet(iron.FieldScalingTypes.NONE)
 fluidGeometricField.VariableLabelSet(iron.FieldVariableTypes.U,'FluidGeometry')
@@ -1041,8 +1041,7 @@ fluidGeometricField.CreateFinish()
 solidGeometricField = iron.Field()
 solidGeometricField.CreateStart(solidGeometricFieldUserNumber,solidRegion)
 # Set the decomposition to use
-solidGeometricField.MeshDecompositionSet(solidDecomposition)
-solidGeometricField.meshDecomposition = solidDecomposition
+solidGeometricField.DecompositionSet(solidDecomposition)
 # Set the scaling to use
 solidGeometricField.ScalingTypeSet(iron.FieldScalingTypes.NONE)
 solidGeometricField.VariableLabelSet(iron.FieldVariableTypes.U,'SolidGeometry')
@@ -1057,7 +1056,7 @@ solidGeometricField.CreateFinish()
 interfaceGeometricField = iron.Field()
 interfaceGeometricField.CreateStartInterface(interfaceGeometricFieldUserNumber,interface)
 # Set the decomposition to use
-interfaceGeometricField.MeshDecompositionSet(interfaceDecomposition)
+interfaceGeometricField.DecompositionSet(interfaceDecomposition)
 # Set the scaling to use
 interfaceGeometricField.ScalingTypeSet(iron.FieldScalingTypes.NONE)
 interfaceGeometricField.VariableLabelSet(iron.FieldVariableTypes.U,'InterfaceGeometry')
